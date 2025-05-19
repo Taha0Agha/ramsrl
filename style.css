@@ -82,7 +82,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 .hero-content {
-    text-align: right;
+    text-align: left;
     max-width: 45%;
     animation: fadeInRight 1s ease; /* إضافة تأثير الظهور */
 }
@@ -237,7 +237,7 @@ nav ul li a:hover {
 }
 .close-button {
     color: #aaa;
-    float: right;
+    float: left;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
