@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopri di più - RAM Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <style>
+        /* ستايل خاص بهذه النافذة لضمان التنسيق */
+        .popup-content {
+            background-color: #fff;
+            padding: 40px;
+            margin: 50px auto; /* لوسط النافذة */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.5s ease-out; /* تطبيق تأثير الظهور */
+        }
+        .popup-content h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #ffc107;
+            padding-bottom: 15px;
+            display: inline-block; /* لجعل الخط تحت العنوان فقط */
+        }
+        .popup-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .popup-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .popup-content ul li {
+            background-color: #f0f4f8;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .popup-close-button {
+            position: absolute;
+            top: 15px;
+            left: 15px; /* لأنه Dir-RTL */
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .popup-close-button:hover {
+            color: #000;
+        }
+
+        /* Responsive adjustments for popup */
+        @media (max-width: 768px) {
+            .popup-content {
+                width: 90%;
+                margin: 20px auto;
+                padding: 20px;
+            }
+            .popup-content h2 {
+                font-size: 1.8em;
+            }
+            .popup-content p, .popup-content ul li {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="popup-content">
+            <span class="popup-close-button" onclick="window.close();">&times;</span>
+            <h2>Maggiori informazioni sui nostri servizi</h2>
+            <p>Noi di RAM S.R.L.S., ci impegniamo sempre a fornire le migliori soluzioni elettriche ai nostri stimati clienti. Offriamo un'ampia gamma di servizi che garantiscono qualità ed efficienza.</p>
+            <ul>
+                <li>Progettazione ed esecuzione di sistemi elettrici per edifici residenziali e commerciali.</li>
+                <li>Installazione e manutenzione di sistemi di illuminazione interna ed esterna.</li>
+                <li>Posa e installazione di cavi e circuiti elettrici.</li>
+                <li>Sistemi a bassa corrente come sistemi di monitoraggio e allarme.</li>
+                <li>Servizi di manutenzione periodica ed emergenze 24 ore su 24.</li>
+            </ul>
+            <p>Crediamo che la soddisfazione del cliente sia la nostra massima priorità e lavoriamo sodo per raggiungerla in ogni progetto.</p>
+        </div>
+    </div>
+</body>
+</html>
