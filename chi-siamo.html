@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo - RAM Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <style>
+        /* ستايل إضافي خاص بهذه الصفحة إذا لزم الأمر */
+        .page-section {
+            padding: 80px 0;
+            background-color: #fff;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .page-section:last-of-type {
+            margin-bottom: 0;
+        }
+        .page-section .section-title {
+            margin-bottom: 40px;
+        }
+        .page-section .section-title h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        .content-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: right;
+        }
+        .content-block img {
+            max-width: 45%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .content-block img:hover {
+            transform: translateY(-5px);
+        }
+        .text-content {
+            max-width: 45%;
+        }
+        .text-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #ffc107;
+        }
+
+        @media (max-width: 992px) {
+            .content-block {
+                flex-direction: column;
+                text-align: center;
+            }
+            .content-block img, .text-content {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="شعار RAM">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="chi-siamo.html">Chi siamo</a></li>
+                    <li><a href="i-progetti.html">I progetti</a></li>
+                    <li><a href="i-servizi.html">I servizi</a></li>
+                    <li><a href="contattaci.html">Contattaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Chi Siamo</h2>
+            </div>
+            <div class="content-block">
+                <div class="text-content">
+                    <p>RAM Appalti Elettrici è stata fondata con l'obiettivo di offrire servizi d'eccellenza nel settore delle costruzioni. Siamo orgogliosi della nostra vasta esperienza e del nostro team specializzato, composto da ingegneri e tecnici altamente qualificati.</p>
+                    <p>Ci impegniamo a costruire relazioni durature con i nostri clienti offrendo soluzioni su misura che soddisfano le loro esigenze e superano le aspettative. I nostri servizi includono la progettazione, realizzazione e manutenzione di impianti elettrici per edifici residenziali, commerciali e industriali.</p>
+                    <p>La nostra visione è quella di essere il partner preferito per tutti i requisiti di appalti elettrici, fornendo soluzioni innovative, sicure ed economicamente vantaggiose. La nostra missione è garantire la massima soddisfazione del cliente attraverso l'eccellenza operativa, la consegna puntuale e un impegno incrollabile per la qualità.</p>
+                </div>
+                <img src="about-us.jpg" alt="فريق العمل">
+            </div>
+            <div class="content-block" style="flex-direction: row-reverse; margin-top: 50px;">
+                <div class="text-content">
+                    <h3>La Nostra Squadra</h3>
+                    <p>Il nostro team è il cuore della nostra azienda. Composto da <span class="highlight">ingegneri esperti, tecnici certificati e personale di supporto dedicato</span>, ognuno di noi si impegna a raggiungere l'eccellenza in ogni fase del progetto. Investiamo continuamente nella formazione e nello sviluppo del nostro personale per garantire che siano all'avanguardia delle ultime tecnologie e standard del settore.</p>
+                    <p>Siamo orgogliosi della nostra cultura collaborativa, dove il lavoro di squadra e l'innovazione sono incoraggiati per affrontare le sfide più complesse e superare le aspettative dei nostri clienti.</p>
+                </div>
+                <img src="team.jpg" alt="صورة فريق عمل">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // يمكن إضافة أي سكريبت خاص بهذه الصفحة هنا إذا لزم الأمر
+    </script>
+</body>
+</html>

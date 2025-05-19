@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Progetti - RAM Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-section {
+            padding: 80px 0;
+            background-color: #fff;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .page-section:last-of-type {
+            margin-bottom: 0;
+        }
+        .page-section .section-title {
+            margin-bottom: 40px;
+        }
+        .page-section .section-title h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .project-card-content {
+            padding: 25px;
+        }
+        .project-card-content h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .project-card-content p {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .project-card-content .primary-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="شعار RAM">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="chi-siamo.html">Chi siamo</a></li>
+                    <li><a href="i-progetti.html">I progetti</a></li>
+                    <li><a href="i-servizi.html">I servizi</a></li>
+                    <li><a href="contattaci.html">Contattaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Progetti</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Progetto 1">
+                    <div class="project-card-content">
+                        <h3>Progetto Residenziale "Aurora"</h3>
+                        <p>Installazione completa dell'impianto elettrico per un complesso residenziale di 50 unità abitative, inclusi sistemi di sicurezza e illuminazione intelligente.</p>
+                        <a href="#" class="primary-button">Vedi Dettagli</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Progetto 2">
+                    <div class="project-card-content">
+                        <h3>Cabina di Trasformazione Industriale</h3>
+                        <p>Progettazione e realizzazione di una cabina di trasformazione per un grande impianto industriale, garantendo efficienza energetica e conformità alle normative.</p>
+                        <a href="#" class="primary-button">Vedi Dettagli</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Progetto 3">
+                    <div class="project-card-content">
+                        <h3>Riqualificazione Illuminazione Pubblica</h3>
+                        <p>Aggiornamento e ottimizzazione del sistema di illuminazione pubblica per il comune di [Nome Comune], con l'adozione di tecnologie LED a basso consumo.</p>
+                        <a href="#" class="primary-button">Vedi Dettagli</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project4.jpg" alt="Progetto 4">
+                    <div class="project-card-content">
+                        <h3>Impianto Fotovoltaico Commerciale</h3>
+                        <p>Installazione di un impianto fotovoltaico da 100 kW su tetto di un centro commerciale, contribuendo alla sostenibilità e al risparmio energetico.</p>
+                        <a href="#" class="primary-button">Vedi Dettagli</a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 50px; font-size: 1.2em; color: #333;">Esplora i nostri successi e scopri come possiamo realizzare il tuo prossimo progetto.</p>
+        </div>
+    </section>
+</body>
+</html>

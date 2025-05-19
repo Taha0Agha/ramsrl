@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contattaci - RAM Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-section {
+            padding: 80px 0;
+            background-color: #fff;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .page-section:last-of-type {
+            margin-bottom: 0;
+        }
+        .page-section .section-title {
+            margin-bottom: 40px;
+        }
+        .page-section .section-title h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .contact-info-card {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            background-color: #e6eef5;
+        }
+        .contact-info-card .icon {
+            font-size: 3em;
+            color: #ffc107;
+            margin-bottom: 20px;
+        }
+        .contact-info-card h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .contact-info-card p, .contact-info-card a {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+        .contact-info-card a {
+            color: #3498db;
+            font-weight: 600;
+        }
+        .contact-info-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .contact-form-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: right; /* ليتوافق مع الاتجاه العربي */
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.05em;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            color: #333;
+            box-sizing: border-box; /* لضمان أن العرض يشمل البادينغ والحدود */
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ffc107;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+        }
+        .submit-button {
+            background-color: #ffc107;
+            color: #0c3000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: auto;
+            display: inline-block; /* لجعل الزر يأخذ حجم محتواه */
+        }
+        .submit-button:hover {
+            background-color: #e0a800;
+            transform: scale(1.02);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="شعار RAM">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="chi-siamo.html">Chi siamo</a></li>
+                    <li><a href="i-progetti.html">I progetti</a></li>
+                    <li><a href="i-servizi.html">I servizi</a></li>
+                    <li><a href="contattaci.html">Contattaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contattaci</h2>
+            </div>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em; color: #555;">Siamo qui per rispondere a tutte le vostre domande e per discutere le vostre esigenze. Non esitate a raggiungerci!</p>
+
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <span class="icon">&#9993;</span> <h3>Email</h3>
+                    <p>Inviateci una email in qualsiasi momento.</p>
+                    <p><a href="mailto:info@ramcompany.com">info@ramcompany.com</a></p>
+                </div>
+                <div class="contact-info-card">
+                    <span class="icon">&#9742;</span> <h3>Telefono</h3>
+                    <p>Chiamateci per una consulenza gratuita.</p>
+                    <p><a href="tel:+966501234567">+966 50 123 4567</a></p>
+                </div>
+                <div class="contact-info-card">
+                    <span class="icon">&#127968;</span> <h3>Indirizzo</h3>
+                    <p>Venite a trovarci presso la nostra sede.</p>
+                    <p>King Fahd Street, Building No. 123, Riyadh, Kingdom of Saudi Arabia</p>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h2>Inviaci un Messaggio</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Oggetto:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
