@@ -503,7 +503,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: right; /* محاذاة النص لليمين */
+    text-align: left; /* محاذاة النص لليمين */
     color: #fff;
     overflow: hidden; /* لمنع أي تجاوز محتمل للعناصر */
     padding: 100px 0; /* padding إضافي للقسم */
@@ -566,7 +566,7 @@ nav ul li a:hover {
     text-align: right; /* محاذاة نص الزر لليمين */
     display: flex; /* لجعل السهم بجانب النص */
     justify-content: space-between; /* دفع السهم إلى اليسار */
-    align-items: center;
+    align-items: left;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -593,7 +593,7 @@ nav ul li a:hover {
     font-size: 1.1em;
     color: #e0e0e0;
     display: flex;
-    align-items: center;
+    align-items: left;
 }
 
 .futuristic-social-links a {
@@ -608,7 +608,7 @@ nav ul li a:hover {
 .futuristic-social-links img {
     height: 25px;
     margin-left: 10px;
-    vertical-align: middle;
+    vertical-align: left;
 }
 
 /* Responsive adjustments for futuristic hero */
@@ -629,16 +629,16 @@ nav ul li a:hover {
     }
     .futuristic-hero .container {
         padding: 0 5%; /* تقليل الإزاحة */
-        align-items: center; /* توسيط المحتوى في الجوال */
-        text-align: center;
+        align-items: left; /* توسيط المحتوى في الجوال */
+        text-align: left;
     }
     .futuristic-button {
-        justify-content: center; /* توسيط محتوى الزر في الجوال */
+        justify-content: left; /* توسيط محتوى الزر في الجوال */
     }
     .futuristic-social-links {
         position: static; /* إزالة التموضع المطلق في الجوال */
         margin-top: 30px;
-        justify-content: center;
+        justify-content: left;
         width: 100%;
     }
 }
