@@ -89,6 +89,26 @@
     }
 }
 /* Global Styles */
+/* تعريفات الخطوط المخصصة */
+@font-face {
+    font-family: 'Neue Machina'; /* هذا هو الاسم الذي ستستخدمه في خاصية font-family */
+    src: url('fonts/NeueMachina-Regular.woff2') format('woff2'),
+         url('fonts/NeueMachina-Regular.woff') format('woff'); /* يمكنك إضافة المزيد من التنسيقات إذا كانت لديك */
+    font-weight: normal; /* هذا يحدد الوزن الافتراضي لهذا الملف */
+    font-style: normal;
+    font-display: swap; /* يحسن تجربة المستخدم عند تحميل الخط */
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('fonts/NeueMachina-Bold.woff2') format('woff2'),
+         url('fonts/NeueMachina-Bold.woff') format('woff');
+    font-weight: bold; /* هذا يحدد الوزن للخط السميك */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* إذا كان لديك أوزان أخرى (مثل Light, Medium, Thin)، أضف تعريفات @font-face مماثلة لكل وزن، مع تحديد font-weight المناسب (مثلاً 300 لـ Light، 500 لـ Medium، إلخ) */
 * {
     margin: 0;
     padding: 0;
