@@ -162,7 +162,7 @@ header .container {
     transition: transform 0.3s ease; /* إضافة تأثير التحريك */
 }
 .logo img:hover {
-    transform: scale(1.1); /* تكبير الشعار عند التمرير */
+    transform: scale(1.5); /* تكبير الشعار عند التمرير */
 }
 nav ul {
     list-style: none;
@@ -225,7 +225,7 @@ nav ul li a:hover {
 .primary-button:hover {
     background-color: #e0a800;
     color: #0c3000;
-    transform: scale(1.05); /* تكبير الزر عند التمرير */
+    transform: scale(1.5); /* تكبير الزر عند التمرير */
 }
 .secondary-button {
     background-color: #3498db; /* لون أزرق */
@@ -233,7 +233,7 @@ nav ul li a:hover {
 }
 .secondary-button:hover {
     background-color: #2980b9;
-    transform: scale(1.05);
+    transform: scale(1.5);
 }
 .hero-image {
     max-width: 45%;
@@ -290,7 +290,7 @@ nav ul li a:hover {
     transition: transform 0.3s ease; /* Add transition */
 }
 .about-image:hover {
-     transform: scale(1.05);
+     transform: scale(1.5);
 }
 .about-image img {
     max-width: 100%;
