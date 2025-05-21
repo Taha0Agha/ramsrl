@@ -18,7 +18,6 @@
     font-display: swap;
 }
 
-/* إذا كان لديك أوزان أخرى (مثل Light, Medium, Thin)، أضف تعريفات @font-face مماثلة لكل وزن، مع تحديد font-weight المناسب (مثلاً 300 لـ Light، 500 لـ Medium، إلخ) */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +27,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
     color: #333;
-    background-color: #f0f4f8; /* لون رمادي فاتح جداً */
+    background-color: #f0f4f8;
 }
 .container {
     max-width: 1200px;
@@ -38,7 +37,7 @@ body {
 h1, h2 {
     margin-bottom: 20px;
     font-weight: 600;
-    color: #2c3e50; /* لون أزرق رمادي داكن */
+    color: #2c3e50;
 }
 p {
     margin-bottom: 20px;
@@ -55,7 +54,7 @@ a:hover {
 
 /* Header Styles */
 header {
-    background-color: #fff; /* لون أبيض */
+    background-color: #fff;
     padding: 20px 0;
     /* تم إزالة position: sticky; و top: 0; لجعل الهيدر غير ثابت */
     z-index: 100;
@@ -68,10 +67,10 @@ header .container {
 }
 .logo img {
     height: 50px;
-    transition: transform 0.3s ease; /* إضافة تأثير التحريك */
+    transition: transform 0.3s ease;
 }
 .logo img:hover {
-    transform: scale(1.2); /* تكبير الشعار عند التمرير */
+    transform: scale(1.2);
 }
 nav ul {
     list-style: none;
@@ -81,42 +80,45 @@ nav ul li {
     margin-right: 20px;
 }
 nav ul li a {
-    color: #2c3e50; /* لون أزرق رمادي داكن */
+    color: #2c3e50;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: color 0.3s ease; /* إضافة تأثير التحريك */
+    transition: color 0.3s ease;
 }
 nav ul li a:hover {
-    color: #ffc107; /* لون أصفر */
+    color: #ffc107;
 }
 
 /* Hero Section Styles */
 .hero {
-    background-color: #f0f4f8; /* لون رمادي فاتح جداً */
+    background-color: #f0f4f8;
     padding: 80px 0;
-    /* تم إزالة خصائص الـ flex من هنا لأن الـ .container هو المتحكم في التوسيط الآن */
+    display: flex; /* حافظ على الـ flex هنا للتحكم في hero-content و hero-image */
+    justify-content: center; /* **المفتاح**: توسيط hero-content و hero-image ككتلة واحدة */
+    align-items: center; /* لتوسيطها عموديًا إذا كان هناك مساحة */
+    flex-wrap: wrap; /* للسماح بالالتفاف في الشاشات الصغيرة */
+    /* .container داخل الـ hero سيهتم بالـ max-width والتوسيط الكلي */
 }
 
-.hero > .container { /* هذا هو الـ container الذي يغلف كل محتوى الـ hero */
-    display: flex; /* اجعل الـ container حاوية فليكس */
-    flex-direction: column; /* لترتيب المحتوى والصور عموديًا داخل الـ container */
-    align-items: center; /* لتوسيط العناصر (hero-content و hero-image) أفقيًا داخل الـ container */
-    /* خصائص الـ container العامة (max-width, margin: 0 auto) هي التي تضمن توسيط الـ container نفسه */
-}
+/* لا داعي لتعديل .hero > .container بشكل خاص بـ flex-direction: column; هنا */
+/* لأن .hero هو الذي سيتحكم في توزيع hero-content و hero-image */
 
 .hero-content {
     text-align: center; /* توسيط كل النص والأزرار داخل هذا القسم */
-    max-width: 800px; /* لتحديد عرض أقصى للنص ليكون مقروءًا */
-    width: 100%; /* ليتكيف مع الشاشات الأصغر */
-    margin-bottom: 40px; /* مسافة بين النص والصور */
+    max-width: 600px; /* **مهم**: تحديد عرض أقصى معقول للنص */
+    width: 100%; /* ليأخذ العرض المتاح حتى الـ max-width */
+    margin-right: 20px; /* مسافة بين النص والصور في الشاشات الكبيرة */
+    margin-left: 20px; /* مسافة بين النص والصور */
+    flex-shrink: 0; /* لمنع الانكماش غير المرغوب فيه */
+    /* padding: 0 20px; يمكن إضافة padding داخلي إذا أردت */
 }
 
 .buttons {
     display: flex;
     gap: 10px;
     justify-content: center; /* لتوسيط الأزرار داخل حاويتها */
-    flex-wrap: wrap; /* للسماح للأزرار بالالتفاف في الشاشات الصغيرة */
+    flex-wrap: wrap;
 }
 .primary-button, .secondary-button {
     padding: 12px 25px;
@@ -127,7 +129,7 @@ nav ul li a:hover {
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 .primary-button {
-    background-color: #ffc107; /* لون أصفر */
+    background-color: #ffc107;
     color: #0c3000;
 }
 .primary-button:hover {
@@ -136,7 +138,7 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 .secondary-button {
-    background-color: #3498db; /* لون أزرق */
+    background-color: #3498db;
     color: #fff;
 }
 .secondary-button:hover {
@@ -145,12 +147,13 @@ nav ul li a:hover {
 }
 
 .hero-image {
-    max-width: 1000px; /* تحديد عرض أقصى لشبكة الصور بالكامل */
-    width: 100%; /* ليتكيف مع الشاشات الأصغر */
-    display: flex; /* استخدام flexbox لتخطيط الصور */
-    flex-wrap: wrap; /* للسماح للصور بالالتفاف */
+    max-width: 600px; /* **مهم**: تحديد عرض أقصى معقول لشبكة الصور بالكامل */
+    width: 100%; /* ليأخذ العرض المتاح حتى الـ max-width */
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* لتوسيط الصور داخل الـ hero-image */
     gap: 20px; /* مسافة بين الصور */
+    flex-shrink: 0; /* لمنع الانكماش غير المرغوب فيه */
 }
 .hero-image img {
     width: calc(50% - 10px); /* 50% لكل صورة ناقص نصف الـ gap لتناسب صفين */
@@ -218,8 +221,8 @@ nav ul li a:hover {
 /* Work Section Styles */
 .work-section {
     padding: 80px 0;
-    background-color: #0a192f; /* لون الخلفية الداكن */
-    color: #fff; /* لون النص الأبيض */
+    background-color: #0a192f;
+    color: #fff;
     text-align: center;
 }
 
@@ -237,21 +240,23 @@ nav ul li a:hover {
 
 .work-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* أربع أعمدة متساوية */
-    grid-template-rows: auto auto auto auto auto; /* خمسة صفوف */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* تعديل لجعلها أكثر مرونة */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr;  أربع أعمدة متساوية - يمكن أن تكون هذه أفضل إذا كانت الصور أبعادها ثابتة */
+    /* grid-template-rows: auto auto auto auto auto;  خمسة صفوف - لا داعي لتحديدها إذا كانت تلقائية */
     gap: 20px;
-    position: relative; /* يجب أن يكون هذا للعنصر الحاوي للـ work-title */
+    position: relative;
     max-width: 1200px; /* لتقييد عرض الشبكة وتوسيطها */
     margin: 0 auto; /* لتوسيط الـ grid نفسها */
+    padding: 0 20px; /* إضافة padding لضمان عدم التصاقها بالأطراف */
 }
 
 .work-title {
     position: absolute;
     font-size: 1.2em;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة للعناوين */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    color: #fff; /* تأكد أن لون النص مرئي على الخلفية الشفافة */
+    color: #fff;
 }
 
 .top-left {
@@ -266,7 +271,7 @@ nav ul li a:hover {
 
 .work-image {
     width: 100%;
-    height: 150px; /* ارتفاع ثابت للصور */
+    height: 150px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -291,7 +296,7 @@ nav ul li a:hover {
     margin-top: 30px;
 }
 
-/* Futuristic Hero Section Styles (New Section) */
+/* Futuristic Hero Section Styles */
 .futuristic-hero {
     position: relative;
     width: 100%;
@@ -319,8 +324,11 @@ nav ul li a:hover {
 .futuristic-hero .container {
     position: relative;
     z-index: 2;
-    padding-right: 10%; /* إزاحة المحتوى لليمين قليلاً ليتناسب مع الصورة */
-    max-width: 100%; /* تأكد من أنه لا يتجاوز عرض الشاشة */
+    /* لإزاحة المحتوى لليمين قليلاً ليتناسب مع الصورة */
+    /* يمكنك تعديل هذه القيمة أو إزالتها إذا لم تكن بحاجة إليها */
+    padding-right: 10%;
+    max-width: 1200px; /* لتقييد عرض المحتوى داخل الـ hero */
+    margin: 0 auto; /* لتوسيط الـ container داخل الـ futuristic-hero */
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* لمحاذاة العناصر إلى اليمين */
@@ -361,8 +369,8 @@ nav ul li a:hover {
     font-weight: 500;
     text-align: right; /* محاذاة نص الزر لليمين */
     display: flex;
-    justify-content: space-between; /* لدفع السهم إلى اليسار والنص إلى اليمين */
-    align-items: center; /* توسيط عمودي للعناصر داخل الزر */
+    justify-content: space-between;
+    align-items: center;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -374,24 +382,24 @@ nav ul li a:hover {
 
 .futuristic-button .arrow {
     font-size: 1.5em;
-    margin-right: 10px; /* السهم على اليسار في RTL */
-    margin-left: 0; /* إزالة الـ margin-left */
+    margin-right: 10px;
+    margin-left: 0;
     transition: transform 0.3s ease;
 }
 
 .futuristic-button:hover .arrow {
-    transform: translateX(5px); /* تحريك السهم لليمين في RTL */
+    transform: translateX(5px);
 }
 
 .futuristic-social-links {
     position: absolute;
     bottom: 30px;
-    right: 30px; /* تغيير من left إلى right للغة RTL */
-    left: auto; /* التأكد من إزالة left */
+    right: 30px;
+    left: auto;
     font-size: 1.1em;
     color: #e0e0e0;
     display: flex;
-    align-items: center; /* توسيط عمودي لرموز التواصل */
+    align-items: center;
 }
 
 .futuristic-social-links a {
@@ -407,9 +415,9 @@ nav ul li a:hover {
 
 .futuristic-social-links img {
     height: 25px;
-    margin-right: 10px; /* تغيير من left إلى right للغة RTL */
-    margin-left: 0; /* إزالة الـ margin-left */
-    vertical-align: middle; /* توسيط الصورة مع النص */
+    margin-right: 10px;
+    margin-left: 0;
+    vertical-align: middle;
 }
 
 
@@ -418,38 +426,44 @@ nav ul li a:hover {
     .container {
         padding: 0 15px;
     }
-    header .container { /* للهيدر في الشاشات الصغيرة */
+    header .container {
         flex-direction: column;
         text-align: center;
     }
     nav ul {
         flex-direction: column;
         align-items: center;
-        margin-top: 15px; /* مسافة بعد اللوجو */
+        margin-top: 15px;
     }
     nav ul li {
-        margin: 10px 0; /* مسافة بين عناصر القائمة */
+        margin: 10px 0;
     }
 
-    .hero > .container {
-        /* no change needed as flex-direction is already column */
+    /* Hero Section - Media Queries */
+    .hero {
+        flex-direction: column; /* لترتيب المحتوى والصور فوق بعضها في الشاشات الأصغر */
     }
     .hero-content {
-        max-width: 100%; /* اجعلها تأخذ العرض الكامل المتاح في الشاشات الصغيرة */
+        max-width: 100%; /* تأخذ العرض الكامل المتاح في الشاشات الصغيرة */
+        margin-right: 0; /* إزالة الـ margin-right */
+        margin-left: 0; /* إزالة الـ margin-left */
+        margin-bottom: 30px; /* مسافة بين النص والصور */
     }
     .hero-image {
-        /* no change needed as justify-content is already center */
+        max-width: 100%; /* تأخذ العرض الكامل المتاح */
+        justify-content: center;
     }
     .hero-image img {
-        width: calc(100% - 20px); /* صورة واحدة في كل صف، مع مراعاة الـ gap */
+        width: calc(50% - 15px); /* صورتين في الصف مع gap أكبر قليلاً */
+        /* أو width: calc(100% - 20px); إذا أردت صورة واحدة لكل صف */
     }
     .buttons {
-        flex-direction: column; /* الأزرار تحت بعضها */
-        align-items: center; /* توسيط الأزرار */
+        flex-direction: column;
+        align-items: center;
     }
     .primary-button, .secondary-button {
         width: 80%; /* أعط الأزرار عرضًا محددًا لتوسيطها */
-        margin: 5px 0; /* مسافة بين الأزرار */
+        margin: 5px 0;
     }
 
     .about-content {
@@ -464,11 +478,11 @@ nav ul li a:hover {
 
     .work-grid {
         grid-template-columns: 1fr; /* عمود واحد في الشاشات الصغيرة */
-        grid-template-rows: auto; /* صفوف تلقائية */
+        grid-template-rows: auto;
     }
     .work-title {
-        position: static; /* إزالة التموضع المطلق */
-        text-align: center; /* توسيط النص */
+        position: static;
+        text-align: center;
         margin-bottom: 10px;
     }
     .company-name {
@@ -492,18 +506,18 @@ nav ul li a:hover {
     }
     .futuristic-hero .container {
         padding: 0 5%;
-        align-items: center; /* توسيط المحتوى في الجوال */
+        align-items: center;
         text-align: center;
     }
     .futuristic-button {
-        justify-content: center; /* توسيط محتوى الزر في الجوال */
+        justify-content: center;
         text-align: center;
-        flex-direction: row-reverse; /* لضمان أن السهم لا يزال على اليسار في RTL مع توسيط النص */
+        flex-direction: row-reverse;
     }
     .futuristic-social-links {
-        position: static; /* إزالة التموضع المطلق في الجوال */
+        position: static;
         margin-top: 30px;
-        justify-content: center; /* توسيط روابط التواصل */
+        justify-content: center;
         width: 100%;
         text-align: center;
     }
@@ -517,11 +531,10 @@ nav ul li a:hover {
         font-size: 1.2em;
     }
     .primary-button, .secondary-button {
-        font-size: 1em; /* تقليل حجم الخط للأزرار */
+        font-size: 1em;
         padding: 10px 20px;
     }
 }
-
 
 /* Animations */
 @keyframes fadeIn {
