@@ -1,23 +1,114 @@
+/* Work Section Styles */
+.work-section {
+    padding: 80px 0;
+    background-color: #0a192f; /* لون الخلفية الداكن */
+    color: #fff; /* لون النص الأبيض */
+    text-align: center;
+}
+
+.work-section .section-title {
+    margin-bottom: 50px;
+}
+
+.work-section .section-title h2 {
+    font-size: 2em;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block; /* لضمان أخذ الحجم بناءً على المحتوى */
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* أربع أعمدة متساوية */
+    grid-template-rows: auto auto auto auto auto; /* خمسة صفوف */
+    gap: 20px;
+    position: relative;
+}
+
+.work-title {
+    position: absolute;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة للعناوين */
+    border-radius: 5px;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.work-image {
+    width: 100%;
+    height: 150px; /* ارتفاع ثابت للصور */
+    overflow: hidden; /* إخفاء أي جزء زائد من الصورة */
+    border-radius: 10px; /* تدوير أطراف الصور */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* ظل خفيف */
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ملء الحاوية مع الحفاظ على نسبة العرض إلى الارتفاع */
+    transition: transform 0.3s ease; /* تأثير التحريك */
+}
+
+.work-image img:hover {
+    transform: scale(1.1); /* تكبير الصورة قليلاً عند التمرير */
+}
+
+.company-name {
+    grid-column: 1 / -1; /* يمتد على كامل العرض */
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr; /* عمود واحد في الشاشات الصغيرة */
+        grid-template-rows: auto; /* صفوف تلقائية */
+    }
+
+    .work-title {
+        position: static; /* إزالة التموضع المطلق */
+        text-align: center; /* توسيط النص */
+        margin-bottom: 10px;
+    }
+
+    .company-name {
+        font-size: 2em;
+    }
+}
 /* Global Styles */
 /* تعريفات الخطوط المخصصة */
 @font-face {
-    font-family: 'Neue Machina';
+    font-family: 'Neue Machina'; /* هذا هو الاسم الذي ستستخدمه في خاصية font-family */
     src: url('fonts/NeueMachina-Regular.woff2') format('woff2'),
-         url('fonts/NeueMachina-Regular.woff') format('woff');
-    font-weight: normal;
+         url('fonts/NeueMachina-Regular.woff') format('woff'); /* يمكنك إضافة المزيد من التنسيقات إذا كانت لديك */
+    font-weight: normal; /* هذا يحدد الوزن الافتراضي لهذا الملف */
     font-style: normal;
-    font-display: swap;
+    font-display: swap; /* يحسن تجربة المستخدم عند تحميل الخط */
 }
 
 @font-face {
     font-family: 'Neue Machina';
     src: url('fonts/NeueMachina-Bold.woff2') format('woff2'),
          url('fonts/NeueMachina-Bold.woff') format('woff');
-    font-weight: bold;
+    font-weight: bold; /* هذا يحدد الوزن للخط السميك */
     font-style: normal;
     font-display: swap;
 }
 
+/* إذا كان لديك أوزان أخرى (مثل Light, Medium, Thin)، أضف تعريفات @font-face مماثلة لكل وزن، مع تحديد font-weight المناسب (مثلاً 300 لـ Light، 500 لـ Medium، إلخ) */
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +118,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
     color: #333;
-    background-color: #f0f4f8;
+    background-color: #f0f4f8; /* لون رمادي فاتح جداً */
 }
 .container {
     max-width: 1200px;
@@ -37,7 +128,7 @@ body {
 h1, h2 {
     margin-bottom: 20px;
     font-weight: 600;
-    color: #2c3e50;
+    color: #2c3e50; /* لون أزرق رمادي داكن */
 }
 p {
     margin-bottom: 20px;
@@ -54,9 +145,10 @@ a:hover {
 
 /* Header Styles */
 header {
-    background-color: #fff;
+    background-color: #fff; /* لون أبيض */
     padding: 20px 0;
-    /* تم إزالة position: sticky; و top: 0; لجعل الهيدر غير ثابت */
+                      /* position: sticky;
+                                           top: 0;*/
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -67,10 +159,10 @@ header .container {
 }
 .logo img {
     height: 50px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* إضافة تأثير التحريك */
 }
 .logo img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1); /* تكبير الشعار عند التمرير */
 }
 nav ul {
     list-style: none;
@@ -80,45 +172,43 @@ nav ul li {
     margin-right: 20px;
 }
 nav ul li a {
-    color: #2c3e50;
+    color: #2c3e50; /* لون أزرق رمادي داكن */
     font-weight: 500;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* إضافة تأثير التحريك */
 }
 nav ul li a:hover {
-    color: #ffc107;
+    color: #ffc107; /* لون أصفر */
 }
 
 /* Hero Section Styles */
 .hero {
-    background-color: #f0f4f8;
+    background-color: #f0f4f8; /* لون رمادي فاتح جداً */
     padding: 80px 0;
-    display: flex; /* حافظ على الـ flex هنا للتحكم في hero-content و hero-image */
-    justify-content: center; /* **المفتاح**: توسيط hero-content و hero-image ككتلة واحدة */
-    align-items: center; /* لتوسيطها عموديًا إذا كان هناك مساحة */
-    flex-wrap: wrap; /* للسماح بالالتفاف في الشاشات الصغيرة */
-    /* .container داخل الـ hero سيهتم بالـ max-width والتوسيط الكلي */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
-/* لا داعي لتعديل .hero > .container بشكل خاص بـ flex-direction: column; هنا */
-/* لأن .hero هو الذي سيتحكم في توزيع hero-content و hero-image */
-
 .hero-content {
-    text-align: center; /* توسيط كل النص والأزرار داخل هذا القسم */
-    max-width: 600px; /* **مهم**: تحديد عرض أقصى معقول للنص */
-    width: 100%; /* ليأخذ العرض المتاح حتى الـ max-width */
-    margin-right: 20px; /* مسافة بين النص والصور في الشاشات الكبيرة */
-    margin-left: 20px; /* مسافة بين النص والصور */
-    flex-shrink: 0; /* لمنع الانكماش غير المرغوب فيه */
-    /* padding: 0 20px; يمكن إضافة padding داخلي إذا أردت */
+    text-align: left;
+    max-width: 45%;
+    animation: fadeInRight 1s ease; /* إضافة تأثير الظهور */
 }
-
+.hero-content h1 {
+    font-size: 2.5em;
+    color: #2c3e50; /* لون أزرق رمادي داكن */
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
 .buttons {
     display: flex;
     gap: 10px;
-    justify-content: center; /* لتوسيط الأزرار داخل حاويتها */
-    flex-wrap: wrap;
 }
 .primary-button, .secondary-button {
     padding: 12px 25px;
@@ -126,43 +216,41 @@ nav ul li a:hover {
     border-radius: 5px;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* إضافة تأثير التحريك */
 }
 .primary-button {
-    background-color: #ffc107;
+    background-color: #ffc107; /* لون أصفر */
     color: #0c3000;
 }
 .primary-button:hover {
     background-color: #e0a800;
     color: #0c3000;
-    transform: scale(1.1);
+    transform: scale(1.05); /* تكبير الزر عند التمرير */
 }
 .secondary-button {
-    background-color: #3498db;
+    background-color: #3498db; /* لون أزرق */
     color: #fff;
 }
 .secondary-button:hover {
     background-color: #2980b9;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
-
 .hero-image {
-    max-width: 600px; /* **مهم**: تحديد عرض أقصى معقول لشبكة الصور بالكامل */
-    width: 100%; /* ليأخذ العرض المتاح حتى الـ max-width */
+    max-width: 45%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* لتوسيط الصور داخل الـ hero-image */
-    gap: 20px; /* مسافة بين الصور */
-    flex-shrink: 0; /* لمنع الانكماش غير المرغوب فيه */
+    justify-content: space-between;
+    animation: fadeInLeft 1s ease; /* إضافة تأثير الظهور */
 }
 .hero-image img {
-    width: calc(50% - 10px); /* 50% لكل صورة ناقص نصف الـ gap لتناسب صفين */
+    width: 48%;
+    margin-bottom: 4%;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* إضافة تأثير التحريك */
 }
 .hero-image img:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* رفع الصورة قليلاً عند التمرير */
 }
 
 /* About Us Section Styles */
@@ -172,11 +260,11 @@ nav ul li a:hover {
 .section-title {
     text-align: center;
     margin-bottom: 50px;
-    animation: fadeIn 1s ease;
+    animation: fadeIn 1s ease; /* إضافة تأثير الظهور */
 }
 .section-title h2 {
     font-size: 2em;
-    color: #2c3e50;
+    color: #2c3e50; /* لون أزرق رمادي داكن */
     position: relative;
     padding-bottom: 10px;
 }
@@ -188,7 +276,7 @@ nav ul li a:hover {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background-color: #ffc107;
+    background-color: #ffc107; /* لون أصفر */
 }
 .about-content {
     display: flex;
@@ -199,10 +287,10 @@ nav ul li a:hover {
 }
 .about-image {
     max-width: 45%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Add transition */
 }
 .about-image:hover {
-    transform: scale(1.1);
+     transform: scale(1.05);
 }
 .about-image img {
     max-width: 100%;
@@ -211,261 +299,131 @@ nav ul li a:hover {
 }
 .about-text {
     max-width: 45%;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1s ease; /* إضافة تأثير الظهور */
 }
 .about-text p {
     font-size: 1.1em;
     color: #555;
 }
 
-/* Work Section Styles */
-.work-section {
-    padding: 80px 0;
-    background-color: #0a192f;
-    color: #fff;
+/* مؤقت المشروعات */
+#project-timer {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
     text-align: center;
-}
-
-.work-section .section-title {
-    margin-bottom: 50px;
-}
-
-.work-section .section-title h2 {
-    font-size: 2em;
-    color: #fff;
-    position: relative;
-    padding-bottom: 10px;
-    display: inline-block;
-}
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* تعديل لجعلها أكثر مرونة */
-    /* grid-template-columns: 1fr 1fr 1fr 1fr;  أربع أعمدة متساوية - يمكن أن تكون هذه أفضل إذا كانت الصور أبعادها ثابتة */
-    /* grid-template-rows: auto auto auto auto auto;  خمسة صفوف - لا داعي لتحديدها إذا كانت تلقائية */
-    gap: 20px;
-    position: relative;
-    max-width: 1200px; /* لتقييد عرض الشبكة وتوسيطها */
-    margin: 0 auto; /* لتوسيط الـ grid نفسها */
-    padding: 0 20px; /* إضافة padding لضمان عدم التصاقها بالأطراف */
-}
-
-.work-title {
-    position: absolute;
-    font-size: 1.2em;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    color: #fff;
-}
-
-.top-left {
-    top: 10px;
-    left: 10px;
-}
-
-.bottom-right {
-    bottom: 10px;
-    right: 10px;
-}
-
-.work-image {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    animation: pulse 2s infinite; /* Add pulse animation */
 }
-
-.work-image img {
+#project-timer h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+#timer-display {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
 }
-
-.work-image img:hover {
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.5s ease;
+}
+.close-button {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+#statistics-container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideInLeft 1s ease;
+}
+#statistics-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+#statistics-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+#statistics-display div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#statistics-display div p {
+    color: #2c3e50;
+}
+#reset-statistics {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+#reset-statistics:hover {
+    background-color: #c0392b;
     transform: scale(1.05);
 }
 
-.company-name {
-    grid-column: 1 / -1; /* يمتد على كامل العرض */
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-/* Futuristic Hero Section Styles */
-.futuristic-hero {
-    position: relative;
-    width: 100%;
-    min-height: 80vh;
-    background: url('background-hero.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: right; /* محاذاة النص لليمين (لغة RTL) */
-    color: #fff;
-    overflow: hidden;
-    padding: 100px 0;
-}
-
-.futuristic-hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-
-.futuristic-hero .container {
-    position: relative;
-    z-index: 2;
-    /* لإزاحة المحتوى لليمين قليلاً ليتناسب مع الصورة */
-    /* يمكنك تعديل هذه القيمة أو إزالتها إذا لم تكن بحاجة إليها */
-    padding-right: 10%;
-    max-width: 1200px; /* لتقييد عرض المحتوى داخل الـ hero */
-    margin: 0 auto; /* لتوسيط الـ container داخل الـ futuristic-hero */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* لمحاذاة العناصر إلى اليمين */
-}
-
-.futuristic-company-name {
-    font-size: 4em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #f7b731;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    background: linear-gradient(to right, #f7b731, #ebedee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.futuristic-slogan {
-    font-size: 1.8em;
-    margin-bottom: 40px;
-    color: #e0e0e0;
-}
-
-.futuristic-links-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 50px;
-    max-width: 600px;
-}
-
-.futuristic-button {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: 500;
-    text-align: right; /* محاذاة نص الزر لليمين */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-.futuristic-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #a453f6;
-    color: #a453f6;
-}
-
-.futuristic-button .arrow {
-    font-size: 1.5em;
-    margin-right: 10px;
-    margin-left: 0;
-    transition: transform 0.3s ease;
-}
-
-.futuristic-button:hover .arrow {
-    transform: translateX(5px);
-}
-
-.futuristic-social-links {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    left: auto;
-    font-size: 1.1em;
-    color: #e0e0e0;
-    display: flex;
-    align-items: center;
-}
-
-.futuristic-social-links a {
-    color: #e0e0e0;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.futuristic-social-links a:hover {
-    color: #a453f6;
-}
-
-.futuristic-social-links img {
-    height: 25px;
-    margin-right: 10px;
-    margin-left: 0;
-    vertical-align: middle;
-}
-
-
 /* Media Queries for Responsive Design */
-@media (max-width: 992px) { /* للأجهزة اللوحية وما شابهها */
+@media (max-width: 992px) {
     .container {
         padding: 0 15px;
     }
-    header .container {
+    .hero {
         flex-direction: column;
         text-align: center;
     }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15px;
-    }
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    /* Hero Section - Media Queries */
-    .hero {
-        flex-direction: column; /* لترتيب المحتوى والصور فوق بعضها في الشاشات الأصغر */
-    }
     .hero-content {
-        max-width: 100%; /* تأخذ العرض الكامل المتاح في الشاشات الصغيرة */
-        margin-right: 0; /* إزالة الـ margin-right */
-        margin-left: 0; /* إزالة الـ margin-left */
-        margin-bottom: 30px; /* مسافة بين النص والصور */
+        max-width: 100%;
     }
     .hero-image {
-        max-width: 100%; /* تأخذ العرض الكامل المتاح */
-        justify-content: center;
+        max-width: 100%;
     }
-    .hero-image img {
-        width: calc(50% - 15px); /* صورتين في الصف مع gap أكبر قليلاً */
-        /* أو width: calc(100% - 20px); إذا أردت صورة واحدة لكل صف */
+    .hero-image img{
+        width: 100%;
+        margin-bottom: 20px;
     }
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .primary-button, .secondary-button {
-        width: 80%; /* أعط الأزرار عرضًا محددًا لتوسيطها */
-        margin: 5px 0;
-    }
-
     .about-content {
         flex-direction: column;
     }
@@ -475,64 +433,28 @@ nav ul li a:hover {
     .about-text {
         max-width: 100%;
     }
-
-    .work-grid {
-        grid-template-columns: 1fr; /* عمود واحد في الشاشات الصغيرة */
-        grid-template-rows: auto;
-    }
-    .work-title {
-        position: static;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .company-name {
-        font-size: 2em;
-    }
-
-    /* Responsive adjustments for futuristic hero */
-    .futuristic-hero {
-        min-height: 60vh;
-        padding: 50px 0;
-    }
-    .futuristic-company-name {
-        font-size: 3em;
-    }
-    .futuristic-slogan {
-        font-size: 1.5em;
-    }
-    .futuristic-links-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-    }
-    .futuristic-hero .container {
-        padding: 0 5%;
-        align-items: center;
-        text-align: center;
-    }
-    .futuristic-button {
-        justify-content: center;
-        text-align: center;
-        flex-direction: row-reverse;
-    }
-    .futuristic-social-links {
-        position: static;
-        margin-top: 30px;
-        justify-content: center;
-        width: 100%;
-        text-align: center;
+    nav ul li {
+        margin-right: 10px;
     }
 }
-
-@media (max-width: 768px) { /* للأجهزة المحمولة الأصغر */
-    .futuristic-company-name {
-        font-size: 2.5em;
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
     }
-    .futuristic-slogan {
-        font-size: 1.2em;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .buttons {
+        flex-direction: column;
     }
     .primary-button, .secondary-button {
-        font-size: 1em;
-        padding: 10px 20px;
+        margin: 5px 0;
+        width: 100%;
     }
 }
 
@@ -572,23 +494,179 @@ nav ul li a:hover {
     }
 }
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        visibility: hidden;
+  from {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+/* Futuristic Hero Section Styles (New Section) */
+.futuristic-hero {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; /* يمكن استخدام 80vh أو 100vh حسب الرغبة */
+    background: url('background-hero.jpg') no-repeat center center/cover; /* صورة الخلفية */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* محاذاة النص لليمين */
+    color: #fff;
+    overflow: hidden; /* لمنع أي تجاوز محتمل للعناصر */
+    padding: 100px 0; /* padding إضافي للقسم */
+}
+
+.futuristic-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* طبقة تظليل فوق الصورة */
+    z-index: 1;
+}
+
+.futuristic-hero .container {
+    position: relative;
+    z-index: 2; /* تأكد أن المحتوى فوق الـ overlay */
+    padding-right: 10%; /* إزاحة المحتوى لليمين قليلاً ليتناسب مع الصورة */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* لمحاذاة العناصر إلى اليمين */
+}
+
+.futuristic-company-name {
+    font-size: 4em; /* حجم كبير لاسم الشركة */
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f7b731; /* لون مميز لاسم الشركة (برتقالي/أصفر) */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    /* تدرج لوني قريب من الصورة */
+    background: linear-gradient(to right, #f7b731, #ebedee); /* يمكنك تعديل الألوان هنا */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.futuristic-slogan {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+.futuristic-links-grid {
+    display: grid; /* استخدام Grid لتنظيم الأزرار */
+    grid-template-columns: 1fr 1fr; /* عمودين */
+    gap: 20px;
+    margin-bottom: 50px;
+    max-width: 600px; /* لتقييد عرض الأزرار */
+}
+
+.futuristic-button {
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية زر شفافة */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* حدود شفافة */
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px; /* أطراف دائرية للأزرار */
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: right; /* محاذاة نص الزر لليمين */
+    display: flex; /* لجعل السهم بجانب النص */
+    justify-content: space-between; /* دفع السهم إلى اليسار */
+    align-items: left;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.futuristic-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #a453f6; /* تغيير لون الحدود عند التمرير (لون بنفسجي) */
+    color: #a453f6;
+}
+
+.futuristic-button .arrow {
+    font-size: 1.5em;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.futuristic-button:hover .arrow {
+    transform: translateX(-5px); /* تحريك السهم عند التمرير */
+}
+
+.futuristic-social-links {
+    position: absolute; /* وضع روابط التواصل الاجتماعي في الأسفل */
+    bottom: 30px;
+    left: 30px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    display: flex;
+    align-items: left;
+}
+
+.futuristic-social-links a {
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+.futuristic-social-links a:hover {
+    color: #a453f6;
+}
+
+.futuristic-social-links img {
+    height: 25px;
+    margin-left: 10px;
+    vertical-align: left;
+}
+
+/* Responsive adjustments for futuristic hero */
+@media (max-width: 992px) {
+    .futuristic-hero {
+        min-height: 60vh; /* تقليل الارتفاع في الشاشات الأصغر */
+        padding: 50px 0;
     }
-    to {
-        transform: translateX(0);
-        visibility: visible;
+    .futuristic-company-name {
+        font-size: 3em;
+    }
+    .futuristic-slogan {
+        font-size: 1.5em;
+    }
+    .futuristic-links-grid {
+        grid-template-columns: 1fr; /* عمود واحد في الشاشات الأصغر */
+        max-width: 400px; /* لتقييد العرض في الجوال */
+    }
+    .futuristic-hero .container {
+        padding: 0 5%; /* تقليل الإزاحة */
+        align-items: left; /* توسيط المحتوى في الجوال */
+        text-align: left;
+    }
+    .futuristic-button {
+        justify-content: left; /* توسيط محتوى الزر في الجوال */
+    }
+    .futuristic-social-links {
+        position: static; /* إزالة التموضع المطلق في الجوال */
+        margin-top: 30px;
+        justify-content: left;
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .futuristic-company-name {
+        font-size: 2.5em;
+    }
+    .futuristic-slogan {
+        font-size: 1.2em;
     }
 }
