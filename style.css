@@ -60,7 +60,7 @@
 }
 
 .work-image img:hover {
-    transform: scale(1.1); /* تكبير الصورة قليلاً عند التمرير */
+    transform: scale(1.05); /* تكبير الصورة قليلاً عند التمرير */
 }
 
 .company-name {
@@ -306,107 +306,11 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* مؤقت المشروعات */
-#project-timer {
-    background-color: #3498db;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 50px;
-    animation: pulse 2s infinite; /* Add pulse animation */
-}
-#project-timer h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-#timer-display {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    border-radius: 10px;
-    position: relative;
-    animation: fadeIn 0.5s ease;
-}
-.close-button {
-    color: #aaa;
-    float: left;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-.close-button:hover,
-.close-button:focus {
-    color: #000;
-    text-decoration: none;
-}
-#statistics-container {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    text-align: center;
-    animation: slideInLeft 1s ease;
-}
-#statistics-container h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #3498db;
-}
-#statistics-display {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-#statistics-display div {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-#statistics-display div p {
-    color: #2c3e50;
-}
-#reset-statistics {
-    padding: 10px 20px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-}
-#reset-statistics:hover {
-    background-color: #c0392b;
-    transform: scale(1.05);
-}
+
+
 
 /* Media Queries for Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 1992px) {
     .container {
         padding: 0 15px;
     }
@@ -437,7 +341,7 @@ nav ul li a:hover {
         margin-right: 10px;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 1920px) {
     header .container {
         flex-direction: column;
         text-align: center;
@@ -583,7 +487,7 @@ nav ul li a:hover {
     border-radius: 8px; /* أطراف دائرية للأزرار */
     font-size: 1.1em;
     font-weight: 500;
-    text-align: right; /* محاذاة نص الزر لليمين */
+    text-align: left; /* محاذاة نص الزر لليمين */
     display: flex; /* لجعل السهم بجانب النص */
     justify-content: space-between; /* دفع السهم إلى اليسار */
     align-items: left;
