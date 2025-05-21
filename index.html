@@ -60,7 +60,7 @@
 
         <div class="futuristic-social-links">
             <a href="https://instagram.com/RAMSRLS" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram"> @granbelsito
+                <img src="instagram-icon.png" alt="Instagram"> @RAMSRLS
             </a>
         </div>
     </div>
@@ -99,122 +99,15 @@
         </div>
     </section>
 
-    <section id="project-timer">
-        <div class="container">
-            <h2>Il prossimo progetto inizierà durante:</h2>
-            <div id="timer-display"></div>
-             <button id="open-modal" class="primary-button">Statistiche del progetto</button>
-        </div>
-    </section>
+    
 
     <div id="statistics-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Statistiche del progetto</h2>
-            <div id="statistics-display">
-                <div>
-                    <p>عدد المشاريع المنجزة:</p>
-                    <p id="completed-projects">0</p>
-                </div>
-                <div>
-                    <p>عدد المشاريع قيد التنفيذ:</p>
-                    <p id="ongoing-projects">0</p>
-                </div>
-                <div>
-                    <p>إجمالي ساعات العمل:</p>
-                    <p id="total-hours">0</p>
-                </div>
-            </div>
-            <button id="reset-statistics">إعادة ضبط الإحصائيات</button>
         </div>
     </div>
 
-    <script>
-        // Project Timer
-        const projectStartDate = new Date("2024-07-15T08:00:00+0000");
-        const timerDisplay = document.getElementById("timer-display");
 
-        function updateTimer() {
-            const now = new Date();
-            const timeDiff = projectStartDate.getTime() - now.getTime();
-
-            if (timeDiff > 0) {
-                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-                timerDisplay.innerHTML = `${days} giorni e ${hours} ore e ${minutes} minuti e ${seconds} secondi`;
-            } else {
-                timerDisplay.innerHTML = "Progetti che iniziano ora!";
-                clearInterval(timerInterval);
-            }
-        }
-
-        updateTimer();
-        const timerInterval = setInterval(updateTimer, 1000);
-
-        // Get the modal
-        const modal = document.getElementById("statistics-modal");
-
-        // Get the button that opens the modal
-        const openModalBtn = document.getElementById("open-modal");
-
-        // Get the <span> element that closes the modal
-        const closeBtn = document.querySelector(".close-button");
-
-        // When the user clicks the button, open the modal
-        openModalBtn.onclick = function() {
-          modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        closeBtn.onclick = function() {
-          modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-
-        // Project Statistics
-        let completedProjects = 150;
-        let ongoingProjects = 25;
-        let totalHours = 25000;
-
-        const completedProjectsDisplay = document.getElementById("completed-projects");
-        const ongoingProjectsDisplay = document.getElementById("ongoing-projects");
-        const totalHoursDisplay = document.getElementById("total-hours");
-        const resetStatisticsButton = document.getElementById("reset-statistics");
-
-        function displayStatistics() {
-            completedProjectsDisplay.textContent = completedProjects;
-            ongoingProjectsDisplay.textContent = ongoingProjects;
-            totalHoursDisplay.textContent = totalHours;
-        }
-
-        displayStatistics();
-
-        resetStatisticsButton.addEventListener("click", function() {
-            completedProjects = 0;
-            ongoingProjects = 0;
-            totalHours = 0;
-            displayStatistics();
-        });
-
-        // Function to open pop-up windows
-        function openPopup(url) {
-            const width = 800; // عرض النافذة
-            const height = 600; // ارتفاع النافذة
-            const left = (window.screen.width / 2) - (width / 2);
-            const top = (window.screen.height / 2) - (height / 2);
-            const features = `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`;
-
-            window.open(url, '_blank', features);
-        }
-    </script>
 </body>
 </html>
